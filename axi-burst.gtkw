@@ -1,0 +1,108 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Mon May  1 08:57:36 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/sim.vcd"
+[dumpfile_mtime] "Mon May  1 08:43:14 2023"
+[dumpfile_size] 989737
+[savefile] "/devel/riscv/litex-root/litedram/axi-burst.gtkw"
+[timestart] 4126
+[size] 2550 2822
+[pos] -1 -1402
+*-6.000000 3235 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 296
+[signals_width] 318
+[sst_expanded] 1
+[sst_vpaned_height] 923
+@28
+aw_first
+aw_last
+@22
+aw_payload_addr[31:0]
+@28
+aw_payload_burst[1:0]
+@22
+aw_payload_cache[3:0]
+aw_payload_len[7:0]
+aw_param_id[7:0]
+@28
+aw_payload_size[2:0]
+aw_ready
+aw_valid
+@200
+-
+@28
+wdata_first
+wdata_last
+@22
+wdata_payload_data[31:0]
+wdata_payload_we[3:0]
+@28
+wdata_ready
+wdata_valid
+@200
+-
+@28
+ar_first
+ar_last
+@22
+ar_payload_addr[31:0]
+@28
+ar_payload_burst[1:0]
+@22
+ar_payload_cache[3:0]
+ar_payload_len[7:0]
+@28
+ar_payload_lock
+ar_payload_prot[2:0]
+@22
+ar_payload_qos[3:0]
+ar_payload_region[3:0]
+@28
+ar_payload_size[2:0]
+@201
+-
+@28
+ar_ready
+ar_valid
+rdata_first
+rdata_last
+@22
+rdata_payload_data[31:0]
+@28
+rdata_ready
+rdata_valid
+@200
+-
+-Native
+@28
+cmd_last
+@22
+cmd_payload_addr[31:0]
+@28
+cmd_payload_we
+cmd_ready
+cmd_valid
+@200
+-
+@28
+wdata_first
+wdata_last
+@22
+wdata_payload_data[31:0]
+wdata_payload_we[3:0]
+@28
+wdata_ready
+wdata_valid
+@200
+-
+@28
+rdata_first
+rdata_last
+@22
+rdata_payload_data[31:0]
+@28
+rdata_ready
+rdata_valid
+[pattern_trace] 1
+[pattern_trace] 0
