@@ -1,0 +1,66 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Mon May  1 06:45:56 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/sim.vcd"
+[dumpfile_mtime] "Mon May  1 06:43:36 2023"
+[dumpfile_size] 4268
+[savefile] "/devel/riscv/litex-root/litedram/avalon_32bit.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-5.399323 77 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 441
+[signals_width] 318
+[sst_expanded] 1
+[sst_vpaned_height] 923
+@28
+sys_clk
+@200
+-Avalon
+@22
+avl_address[29:0]
+avl_burstcount[7:0]
+@28
+avl_waitrequest
+avl_write
+@22
+avl_writedata[31:0]
+@28
+avl_read
+@22
+avl_readdata[31:0]
+@28
+avl_readdatavalid
+@200
+-
+@24
+state[1:0]
+@200
+-
+-Native
+@28
+cmd_last
+@22
+cmd_payload_addr[29:0]
+@28
+cmd_payload_we
+cmd_ready
+cmd_valid
+@200
+-
+@22
+wdata_payload_data[31:0]
+wdata_payload_we[3:0]
+@28
+wdata_ready
+wdata_valid
+@200
+-
+@23
+rdata_payload_data[31:0]
+@28
+rdata_ready
+rdata_valid
+[pattern_trace] 1
+[pattern_trace] 0
