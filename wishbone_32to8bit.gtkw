@@ -1,0 +1,67 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May  4 06:13:16 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/sim.vcd"
+[dumpfile_mtime] "Thu May  4 06:08:33 2023"
+[dumpfile_size] 101451
+[savefile] "/devel/riscv/litex-root/litedram/wishbone_32to8bit.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-5.940696 155 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 839
+[signals_width] 798
+[sst_expanded] 1
+[sst_vpaned_height] 923
+@28
+sys_clk
+@200
+-
+-Wishbone
+@22
+wb_adr[29:0]
+wb_dat_r[31:0]
+wb_dat_w[31:0]
+@28
+wb_we
+wb_cyc
+wb_stb
+wb_ack
+@22
+wb_sel[3:0]
+@200
+-
+@28
+testwishbone_fsm_state[1:0]
+@200
+-
+-Native
+@22
+port_cmd_payload_addr[29:0]
+@28
+port_cmd_payload_we
+port_cmd_ready
+port_cmd_valid
+port_rdata_last
+@200
+-
+@22
+port_wdata_payload_data[7:0]
+@28
+port_wdata_payload_we
+port_wdata_ready
+port_wdata_valid
+port_wdata_first
+port_wdata_last
+@200
+-
+@22
+port_rdata_payload_data[7:0]
+@28
+port_rdata_ready
+port_rdata_valid
+port_rdata_first
+port_rdata_last
+[pattern_trace] 1
+[pattern_trace] 0

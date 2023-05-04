@@ -1,19 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Mon May  1 08:57:36 2023
+[*] Wed May  3 09:05:03 2023
 [*]
-[dumpfile] "/devel/riscv/litex-root/litedram/sim.vcd"
-[dumpfile_mtime] "Mon May  1 08:43:14 2023"
-[dumpfile_size] 989737
+[dumpfile] "/devel/riscv/litex-root/litedram/axi-burst.vcd"
+[dumpfile_mtime] "Wed May  3 08:53:43 2023"
+[dumpfile_size] 990188
 [savefile] "/devel/riscv/litex-root/litedram/axi-burst.gtkw"
-[timestart] 4126
+[timestart] 28580
 [size] 2550 2822
-[pos] -1 -1402
-*-6.000000 3235 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 296
+[pos] -1 -1
+*-6.000000 6470 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 495
 [signals_width] 318
 [sst_expanded] 1
-[sst_vpaned_height] 923
+[sst_vpaned_height] 594
 @28
 aw_first
 aw_last
@@ -32,14 +32,17 @@ aw_valid
 @200
 -
 @28
-wdata_first
-wdata_last
+w_first
+w_last
+w_param_dest
+w_param_id
+w_param_user
 @22
-wdata_payload_data[31:0]
-wdata_payload_we[3:0]
+w_payload_data[31:0]
+w_payload_strb[3:0]
 @28
-wdata_ready
-wdata_valid
+w_ready
+w_valid
 @200
 -
 @28
@@ -60,18 +63,24 @@ ar_payload_qos[3:0]
 ar_payload_region[3:0]
 @28
 ar_payload_size[2:0]
-@201
--
-@28
 ar_ready
 ar_valid
-rdata_first
-rdata_last
-@22
-rdata_payload_data[31:0]
+@200
+-
 @28
-rdata_ready
-rdata_valid
+r_first
+r_last
+r_param_dest
+@22
+r_param_id[7:0]
+@28
+r_param_user
+@22
+r_payload_data[31:0]
+@28
+r_payload_resp[1:0]
+r_ready
+r_valid
 @200
 -
 -Native
@@ -104,5 +113,6 @@ rdata_payload_data[31:0]
 @28
 rdata_ready
 rdata_valid
+sys_clk
 [pattern_trace] 1
 [pattern_trace] 0

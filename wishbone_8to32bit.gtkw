@@ -1,41 +1,34 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Thu May  4 05:18:28 2023
+[*] Thu May  4 05:16:32 2023
 [*]
 [dumpfile] "/devel/riscv/litex-root/litedram/sim.vcd"
-[dumpfile_mtime] "Thu May  4 05:17:28 2023"
-[dumpfile_size] 89948
-[savefile] "/devel/riscv/litex-root/litedram/avalon_8to32bit.gtkw"
-[timestart] 1210
+[dumpfile_mtime] "Thu May  4 04:57:11 2023"
+[dumpfile_size] 82509
+[savefile] "/devel/riscv/litex-root/litedram/wishbone_8to32bit.gtkw"
+[timestart] 0
 [size] 2550 2822
 [pos] -1 -1
-*-7.000000 19 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 429
+*-5.000000 87 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 60
 [signals_width] 414
-[sst_expanded] 1
+[sst_expanded] 0
 [sst_vpaned_height] 923
-@28
+@29
 sys_clk
 @200
--Avalon
+-Wishbone
 @22
-avl_address[29:0]
-avl_burstcount[7:0]
+wb_adr[29:0]
+wb_dat_r[7:0]
+wb_dat_w[7:0]
 @28
-avl_waitrequest
-avl_write
-@22
-avl_writedata[7:0]
-@28
-avl_read
-@22
-avl_readdata[7:0]
-@28
-avl_readdatavalid
+wb_we
+wb_ack
+wb_cyc
+wb_stb
 @200
 -
-@28
-cmd
 @24
 fsm_state[1:0]
 @200
