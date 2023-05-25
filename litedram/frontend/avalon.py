@@ -78,22 +78,12 @@ class LiteDRAMAvalonMM2Native(Module):
                     ] if downconvert else [],
                     NextValue(writedata, avalon.writedata),
                     [] if downconvert else [NextValue(port.cmd.last, 0)],
-                    NextState("WRITE_DATA")
+                    NextState("SINGLE_WRITE")
                 ).Elif(avalon.read,
-                      NextState("READ_DATA")))
+                      NextState("SINGLE_READ")))
                 )
 
-        fsm.act("WRITE_CMD",
-            avalon.waitrequest.eq(1),
-            port.rdata.ready.eq(0),
-
-            port.cmd.addr.eq(address),
-            port.cmd.we.eq(1),
-            port.cmd.valid.eq(1),
-
-            If(port.cmd.ready, NextState("WRITE_DATA")))
-
-        fsm.act("WRITE_DATA",
+        fsm.act("SINGLE_WRITE",
             avalon.waitrequest.eq(1),
             port.rdata.ready.eq(0),
 
@@ -114,36 +104,20 @@ class LiteDRAMAvalonMM2Native(Module):
             port.wdata.we.eq(byteenable),
 
             If(port.wdata.ready,
-                avalon.waitrequest.eq(active_burst if downconvert else ~active_burst),
+                avalon.waitrequest.eq(0 if downconvert else 1),
                 NextValue(writedata, avalon.writedata),
 
-                If(~active_burst,
-                    port.flush.eq(1),
-                    NextValue(cmd_ready_seen, 0) if downconvert else NextValue(port.cmd.last, 1),
-                    NextValue(burstcounter, 0),
-                    NextValue(byteenable, 0),
-                    # this marks the end of a write cycle
-                    NextState("START")
-                ).Else(
-                    NextValue(address, address + burst_increment),
-                    NextValue(burstcounter, burstcounter - 1),
-                    NextState("WRITE_CMD")))
-                )
+                port.flush.eq(1),
+                NextValue(cmd_ready_seen, 0) if downconvert else NextValue(port.cmd.last, 1),
+                NextValue(byteenable, 0),
+                NextState("START")
+            )
+        )
 
         if downconvert:
             self.comb += port.cmd.last.eq(~(fsm.ongoing("WRITE_CMD") | fsm.ongoing("WRITE_DATA") | avalon.write))
 
-        fsm.act("READ_CMD",
-            avalon.waitrequest.eq(1),
-            port.rdata.ready.eq(1),
-            port.cmd.addr.eq(address),
-            port.cmd.we.eq(0),
-            port.cmd.valid.eq(1),
-
-            If(port.cmd.ready,
-                NextState("READ_DATA")))
-
-        fsm.act("READ_DATA",
+        fsm.act("SINGLE_READ",
             avalon.waitrequest.eq(1),
             port.rdata.ready.eq(1),
 
@@ -163,16 +137,11 @@ class LiteDRAMAvalonMM2Native(Module):
                 avalon.readdata.eq(port.rdata.data),
                 avalon.readdatavalid.eq(1),
 
-                If(~active_burst,
-                    [
-                        port.cmd.valid.eq(0),
-                        avalon.waitrequest.eq(0),
-                        NextValue(cmd_ready_seen, 0),
-                    ] if downconvert else [],
-                    NextValue(burstcounter, 0),
-                    NextState("START")
-
-                ).Else(NextValue(address, address + burst_increment),
-                      NextValue(burstcounter, burstcounter - 1),
-                      NextState("READ_CMD")))
-                )
+                [
+                    port.cmd.valid.eq(0),
+                    avalon.waitrequest.eq(0),
+                    NextValue(cmd_ready_seen, 0),
+                ] if downconvert else [],
+                NextState("START")
+            )
+        )
