@@ -18,7 +18,7 @@ from litedram.frontend.adapter import LiteDRAMNativePortConverter
 # LiteDRAMWishbone2Native --------------------------------------------------------------------------
 
 class LiteDRAMAvalonMM2Native(Module):
-    def __init__(self, avalon, port, base_address=0x00000000, burst_increment=1):
+    def __init__(self, avalon, port, base_address=0x00000000, max_burst_length=64, burst_increment=1):
         avalon_data_width = len(avalon.writedata)
         port_data_width     = 2**int(log2(len(port.wdata.data))) # Round to lowest power 2
         ratio               = avalon_data_width/port_data_width
@@ -43,14 +43,26 @@ class LiteDRAMAvalonMM2Native(Module):
         offset  = base_address >> log2_int(port.data_width//8)
 
         burstcounter      = Signal(9)
+        start_burst       = Signal()
         active_burst      = Signal()
-        address           = Signal(avalon_data_width)
+        address           = Signal.like(port.cmd.addr)
         byteenable        = Signal.like(avalon.byteenable)
         writedata         = Signal(avalon_data_width)
         start_transaction = Signal()
         cmd_ready_seen    = Signal()
 
-        self.comb += active_burst.eq(2 <= burstcounter)
+        write_layout = [
+            ("address", len(address)),
+            ("data", avalon_data_width),
+            ("byteenable", len(avalon.byteenable))
+        ]
+
+        self.submodules.write_fifo = write_fifo = stream.SyncFIFO(write_layout, max_burst_length)
+
+        self.comb += [
+            start_burst .eq(2 <= avalon.burstcount),
+            active_burst.eq(1 <= burstcounter)
+        ]
         self.sync += [
             If(start_transaction,
                 byteenable.eq(avalon.byteenable),
@@ -58,30 +70,43 @@ class LiteDRAMAvalonMM2Native(Module):
                 address.eq(avalon.address - offset))
         ]
 
-        start_condition = start_transaction if downconvert else (start_transaction & port.cmd.ready)
+        start_condition = start_transaction if downconvert else (start_transaction & (start_burst | port.cmd.ready))
 
         self.submodules.fsm = fsm = FSM(reset_state="START")
         fsm.act("START",
             avalon.waitrequest.eq(1),
-            port.cmd.addr.eq(avalon.address - offset),
-            port.cmd.we.eq(avalon.write),
-            port.cmd.valid   .eq(avalon.read | avalon.write),
+            If (~start_burst,
+                port.cmd.addr.eq(avalon.address - offset),
+                port.cmd.we.eq(avalon.write),
+                port.cmd.valid.eq(avalon.read | avalon.write)
+            ),
+
             start_transaction.eq(avalon.read | avalon.write),
 
             If(start_condition,
-                [] if downconvert else [avalon.waitrequest.eq(0)],
+                [] if downconvert else [If (~start_burst, avalon.waitrequest.eq(0))],
                 If (avalon.write,
-                    [
-                        port.wdata.data.eq(avalon.writedata),
-                        port.wdata.valid.eq(1),
-                        port.wdata.we.eq(avalon.byteenable),
-                    ] if downconvert else [],
-                    NextValue(writedata, avalon.writedata),
-                    [] if downconvert else [NextValue(port.cmd.last, 0)],
-                    NextState("SINGLE_WRITE")
+                    If (start_burst,
+                        NextState("BURST_WRITE")
+                    ).Else(
+                        [
+                            port.wdata.data.eq(avalon.writedata),
+                            port.wdata.valid.eq(1),
+                            port.wdata.we.eq(avalon.byteenable),
+                        ] if downconvert else [],
+                        NextValue(writedata, avalon.writedata),
+                        [] if downconvert else [NextValue(port.cmd.last, 0)],
+                        NextState("SINGLE_WRITE")
+                    )
                 ).Elif(avalon.read,
-                      NextState("SINGLE_READ")))
+                    If (active_burst,
+                        NextState("BURST_READ")
+                    ).Else(
+                        NextState("SINGLE_READ")
+                    )
                 )
+            )
+        )
 
         fsm.act("SINGLE_WRITE",
             avalon.waitrequest.eq(1),
@@ -114,8 +139,35 @@ class LiteDRAMAvalonMM2Native(Module):
             )
         )
 
-        if downconvert:
-            self.comb += port.cmd.last.eq(~(fsm.ongoing("WRITE_CMD") | fsm.ongoing("WRITE_DATA") | avalon.write))
+        fsm.act("BURST_WRITE",
+            # FIFO producer
+            avalon.waitrequest.eq(~(write_fifo.sink.ready & active_burst)),
+            write_fifo.sink.payload.address.eq(address),
+            write_fifo.sink.payload.data.eq(avalon.writedata),
+            write_fifo.sink.payload.byteenable.eq(avalon.byteenable),
+            write_fifo.sink.valid.eq(avalon.write & ~avalon.waitrequest),
+            write_fifo.sink.last.eq(burstcounter == 1),
+
+            If (avalon.write & active_burst,
+                If (write_fifo.sink.ready & write_fifo.sink.valid,
+                    NextValue(burstcounter, burstcounter - 1),
+                    NextValue(address, address + burst_increment))
+            ).Else(
+                avalon.waitrequest.eq(1),
+                # wait for the FIFO to be empty
+                If (write_fifo.source.last & port.wdata.ready, NextState("START"))
+            ),
+
+            # FIFO consumer
+            port.cmd.addr.eq(write_fifo.source.payload.address),
+            port.cmd.we.eq(1),
+            port.cmd.valid.eq(write_fifo.source.valid),
+
+            port.wdata.data.eq(write_fifo.source.payload.data),
+            port.wdata.we.eq(write_fifo.source.payload.byteenable),
+            port.wdata.valid.eq(write_fifo.source.valid),
+            write_fifo.source.ready.eq(port.wdata.ready),
+        )
 
         fsm.act("SINGLE_READ",
             avalon.waitrequest.eq(1),
@@ -145,3 +197,8 @@ class LiteDRAMAvalonMM2Native(Module):
                 NextState("START")
             )
         )
+
+        fsm.act("BURST_READ",
+            NextState("START")
+        )
+
