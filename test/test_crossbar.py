@@ -230,7 +230,7 @@ class TestCrossbar(unittest.TestCase):
                                     read_latency=dut.settings.phy.read_latency,
                                     **kwargs)
         generators += [*controller.generators(), timeout_generator(timeout)]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="crossbar_" + self._testMethodName + ".vcd", **kwargs)
         return controller.data
 
     def test_available_address_mappings(self):
@@ -435,7 +435,7 @@ class TestCrossbar(unittest.TestCase):
         sim_kwargs = {}
         if clocks is not None:
             sim_kwargs["clocks"] = clocks
-        run_simulation(dut, generators, **sim_kwargs)
+        run_simulation(dut, generators, vcd_name="crossbar_" + self._testMethodName + ".vcd", **sim_kwargs)
 
         # Split controller data by master, as this is what we want to compare
         consumed = defaultdict(list)

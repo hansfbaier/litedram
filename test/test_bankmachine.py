@@ -155,7 +155,7 @@ class TestBankMachine(unittest.TestCase):
         ]
         if generators is not None:
             all_generators += [g(dut) for g in generators]
-        run_simulation(dut, all_generators)
+        run_simulation(dut, all_generators, vcd_name="bankmachine_" + self._testMethodName + ".vcd")
         return commands
 
     def test_opens_correct_row(self):

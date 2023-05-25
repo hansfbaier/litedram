@@ -39,7 +39,7 @@ class TestAvalon(MemoryTestDataMixin, unittest.TestCase):
             dut.mem.write_handler(dut.port),
             dut.mem.read_handler(dut.port),
         ]
-        run_simulation(dut, generators, vcd_name='sim.vcd')
+        run_simulation(dut, generators, vcd_name="avalon_" + self._testMethodName + ".vcd")
         self.assertEqual(dut.mem.mem, mem_expected)
 
     def test_avalon_8bit(self):
@@ -169,5 +169,5 @@ class TestAvalon(MemoryTestDataMixin, unittest.TestCase):
             dut.mem.read_handler(dut.port),
         ]
 
-        run_simulation(dut, generators, vcd_name='sim.vcd')
+        run_simulation(dut, generators, vcd_name="avalon_" + self._testMethodName + ".vcd")
         self.assertEqual(dut.mem.mem, data)

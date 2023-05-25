@@ -150,7 +150,7 @@ class TestMultiplexer(unittest.TestCase):
             self.assertEqual((yield from dut.fsm_state()), "READ")
 
         dut = MultiplexerDUT()
-        run_simulation(dut, main_generator(dut))
+        run_simulation(dut, main_generator(dut), vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_fsm_read_to_write_latency(self):
         # Verify the timing of READ to WRITE transition.
@@ -176,7 +176,7 @@ class TestMultiplexer(unittest.TestCase):
             self.assertEqual(states, expected)
 
         dut = MultiplexerDUT()
-        run_simulation(dut, main_generator(dut))
+        run_simulation(dut, main_generator(dut), vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_fsm_write_to_read_latency(self):
         # Verify the timing of WRITE to READ transition.
@@ -211,7 +211,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_steer_read_correct_phases(self):
         # Check that correct phases are being used during READ.
@@ -237,7 +237,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_steer_write_correct_phases(self):
         # Check that correct phases are being used during WRITE.
@@ -263,7 +263,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_single_phase_cmd_req(self):
         # Verify that, for a single phase, commands are sent sequentially.
@@ -291,7 +291,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_ras_trrd(self):
         # Verify tRRD.
@@ -323,7 +323,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_cas_tccd(self):
         # Verify tCCD.
@@ -355,7 +355,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_fsm_anti_starvation(self):
         # Check that anti-starvation works according to controller settings.
@@ -390,7 +390,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(100),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_write_datapath(self):
         # Verify that data is transmitted from native interface to DFI.
@@ -414,7 +414,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_read_datapath(self):
         # Verify that data is transmitted from DFI to native interface.
@@ -439,7 +439,7 @@ class TestMultiplexer(unittest.TestCase):
             main_generator(dut),
             timeout_generator(50),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_refresh_requires_gnt(self):
         # After refresher command request, multiplexer waits for permission from all bank machines.
@@ -480,7 +480,7 @@ class TestMultiplexer(unittest.TestCase):
             yield from assert_dfi_cmd(cas=1, ras=1, we=0)
 
         dut = MultiplexerDUT()
-        run_simulation(dut, main_generator(dut))
+        run_simulation(dut, main_generator(dut), vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
     def test_requests_from_multiple_bankmachines(self):
         # Check complex communication scenario with requests from multiple bank machines
@@ -559,7 +559,7 @@ class TestMultiplexer(unittest.TestCase):
             dfi_monitor(dut.dfi),
             timeout_generator(200),
         ]
-        run_simulation(dut, generators)
+        run_simulation(dut, generators, vcd_name="multiplexer_" + self._testMethodName + ".vcd")
 
         # Check captured DFI data with the description
         for snap in dfi_snapshots:
