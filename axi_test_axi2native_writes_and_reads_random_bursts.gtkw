@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 10:56:43 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/axi_test_axi2native_writes_and_reads_random_bursts.vcd"
+[dumpfile_mtime] "Thu May 25 10:33:18 2023"
+[dumpfile_size] 981961
+[savefile] "/devel/riscv/litex-root/litedram/axi_test_axi2native_writes_and_reads_random_bursts.gtkw"
+[timestart] 26163
+[size] 2550 2822
+[pos] -1 -1402
+*-7.000000 26525 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 60
+[signals_width] 318
+[sst_expanded] 0
+[sst_vpaned_height] 923
+@28
+cmd_last
+@22
+cmd_payload_addr[31:0]
+@28
+cmd_payload_we
+cmd_ready
+cmd_valid
+@200
+-
+@28
+wdata_first
+wdata_last
+@22
+wdata_payload_data[31:0]
+wdata_payload_we[3:0]
+@28
+wdata_ready
+wdata_valid
+@201
+-
+@28
+rdata_first
+rdata_last
+@22
+rdata_payload_data[31:0]
+@28
+rdata_ready
+rdata_valid
+[pattern_trace] 1
+[pattern_trace] 0

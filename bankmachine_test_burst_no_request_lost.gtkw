@@ -1,0 +1,47 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 04:00:28 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/bankmachine_test_burst_no_request_lost.vcd"
+[dumpfile_mtime] "Thu May 25 01:25:23 2023"
+[dumpfile_size] 13851
+[savefile] "/devel/riscv/litex-root/litedram/bankmachine_test_burst_no_request_lost.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-6.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 296
+[signals_width] 270
+[sst_expanded] 1
+[sst_vpaned_height] 923
+@28
+BankMachineDUT.sys_clk
+@200
+-
+@22
+BankMachineDUT.req_addr[20:0]
+@28
+BankMachineDUT.req_lock
+BankMachineDUT.req_rdata_valid
+BankMachineDUT.req_ready
+BankMachineDUT.req_valid
+BankMachineDUT.req_wdata_ready
+BankMachineDUT.req_we
+@200
+-
+@22
+BankMachineDUT.cmd_payload_a[12:0]
+@28
+BankMachineDUT.cmd_payload_ba[2:0]
+BankMachineDUT.cmd_payload_cas
+BankMachineDUT.cmd_payload_is_cmd
+BankMachineDUT.cmd_payload_is_read
+BankMachineDUT.cmd_payload_is_write
+BankMachineDUT.cmd_payload_ras
+BankMachineDUT.cmd_payload_we
+BankMachineDUT.cmd_ready
+BankMachineDUT.cmd_valid
+@201
+-
+[pattern_trace] 1
+[pattern_trace] 0

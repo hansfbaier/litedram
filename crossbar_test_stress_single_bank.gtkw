@@ -1,0 +1,130 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 01:55:59 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/crossbar_test_stress_single_bank.vcd"
+[dumpfile_mtime] "Thu May 25 01:37:45 2023"
+[dumpfile_size] 31845
+[savefile] "/devel/riscv/litex-root/litedram/crossbar_test_stress_single_bank.gtkw"
+[timestart] 113
+[size] 2550 2822
+[pos] -1 -1
+*-6.000000 385 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 60
+[signals_width] 558
+[sst_expanded] 0
+[sst_vpaned_height] 923
+@22
+CrossbarDUT.interface_rdata[63:0]
+CrossbarDUT.interface_wdata[63:0]
+CrossbarDUT.interface_wdata_we[7:0]
+@200
+-
+-
+@28
+CrossbarDUT.litedramnativeport0_cmd_first
+CrossbarDUT.litedramnativeport0_cmd_last
+@22
+CrossbarDUT.litedramnativeport0_cmd_payload_addr[23:0]
+@28
+CrossbarDUT.litedramnativeport0_cmd_payload_we
+CrossbarDUT.litedramnativeport0_cmd_ready
+CrossbarDUT.litedramnativeport0_cmd_valid
+@22
+CrossbarDUT.litedramnativeport0_rdata_payload_data[63:0]
+@28
+CrossbarDUT.litedramnativeport0_rdata_ready
+CrossbarDUT.litedramnativeport0_rdata_valid
+@22
+CrossbarDUT.litedramnativeport0_wdata_payload_data[63:0]
+CrossbarDUT.litedramnativeport0_wdata_payload_we[7:0]
+@28
+CrossbarDUT.litedramnativeport0_wdata_ready
+CrossbarDUT.litedramnativeport0_wdata_valid
+@200
+-
+-
+@28
+CrossbarDUT.litedramnativeport1_cmd_first
+CrossbarDUT.litedramnativeport1_cmd_last
+@22
+CrossbarDUT.litedramnativeport1_cmd_payload_addr[23:0]
+@28
+CrossbarDUT.litedramnativeport1_cmd_payload_we
+CrossbarDUT.litedramnativeport1_cmd_ready
+CrossbarDUT.litedramnativeport1_cmd_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport1_rdata_payload_data[63:0]
+@28
+CrossbarDUT.litedramnativeport1_rdata_ready
+CrossbarDUT.litedramnativeport1_rdata_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport1_wdata_payload_data[63:0]
+CrossbarDUT.litedramnativeport1_wdata_payload_we[7:0]
+@28
+CrossbarDUT.litedramnativeport1_wdata_ready
+CrossbarDUT.litedramnativeport1_wdata_valid
+@200
+-
+-
+@28
+CrossbarDUT.litedramnativeport2_cmd_first
+CrossbarDUT.litedramnativeport2_cmd_last
+@22
+CrossbarDUT.litedramnativeport2_cmd_payload_addr[23:0]
+@28
+CrossbarDUT.litedramnativeport2_cmd_payload_we
+CrossbarDUT.litedramnativeport2_cmd_ready
+CrossbarDUT.litedramnativeport2_cmd_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport2_rdata_payload_data[63:0]
+@28
+CrossbarDUT.litedramnativeport2_rdata_ready
+CrossbarDUT.litedramnativeport2_rdata_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport2_wdata_payload_data[63:0]
+CrossbarDUT.litedramnativeport2_wdata_payload_we[7:0]
+@28
+CrossbarDUT.litedramnativeport2_wdata_ready
+CrossbarDUT.litedramnativeport2_wdata_valid
+@200
+-
+-
+@28
+CrossbarDUT.litedramnativeport3_cmd_first
+CrossbarDUT.litedramnativeport3_cmd_last
+@22
+CrossbarDUT.litedramnativeport3_cmd_payload_addr[23:0]
+@28
+CrossbarDUT.litedramnativeport3_cmd_payload_we
+CrossbarDUT.litedramnativeport3_cmd_ready
+CrossbarDUT.litedramnativeport3_cmd_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport3_rdata_payload_data[63:0]
+@28
+CrossbarDUT.litedramnativeport3_rdata_ready
+CrossbarDUT.litedramnativeport3_rdata_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport3_wdata_payload_data[63:0]
+CrossbarDUT.litedramnativeport3_wdata_payload_we[7:0]
+@28
+CrossbarDUT.litedramnativeport3_wdata_ready
+CrossbarDUT.litedramnativeport3_wdata_valid
+@200
+-
+@29
+CrossbarDUT.sys_clk
+[pattern_trace] 1
+[pattern_trace] 0

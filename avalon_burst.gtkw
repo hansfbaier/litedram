@@ -1,0 +1,76 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 10:56:45 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/avalon_test_avalon_burst.vcd"
+[dumpfile_mtime] "Thu May 25 10:50:12 2023"
+[dumpfile_size] 10140
+[savefile] "/devel/riscv/litex-root/litedram/avalon_burst.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-5.330579 529 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 338
+[signals_width] 342
+[sst_expanded] 1
+[sst_vpaned_height] 381
+@28
+sys_clk
+@200
+-
+-Avalon
+@22
+avl_address[29:0]
+avl_burstcount[7:0]
+@28
+avl_waitrequest
+avl_write
+@22
+avl_writedata[31:0]
+@28
+avl_read
+@22
+avl_readdata[31:0]
+@28
+avl_readdatavalid
+@200
+-
+-State
+@22
+burstcounter[8:0]
+@28
+start_transaction
+active_burst
+@24
+state[2:0]
+@200
+-
+-Native
+@22
+cmd_payload_addr[29:0]
+@28
+cmd_payload_we
+cmd_ready
+cmd_valid
+cmd_last
+@200
+-
+@22
+wdata_payload_data[31:0]
+wdata_payload_we[3:0]
+@28
+wdata_ready
+wdata_valid
+@200
+-
+@22
+rdata_payload_data[31:0]
+@28
+rdata_ready
+rdata_valid
+@200
+-
+@28
+flush
+[pattern_trace] 1
+[pattern_trace] 0

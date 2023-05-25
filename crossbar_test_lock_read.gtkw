@@ -1,0 +1,96 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 01:52:26 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/crossbar_test_lock_read.vcd"
+[dumpfile_mtime] "Thu May 25 01:37:33 2023"
+[dumpfile_size] 12251
+[savefile] "/devel/riscv/litex-root/litedram/crossbar_test_lock_read.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-7.000000 273 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 60
+[signals_width] 588
+[sst_expanded] 0
+[sst_vpaned_height] 923
+@22
+CrossbarDUT.interface_rdata[63:0]
+CrossbarDUT.interface_wdata[63:0]
+CrossbarDUT.interface_wdata_we[7:0]
+@200
+-
+-
+@28
+CrossbarDUT.litedramnativeport0_cmd_first
+CrossbarDUT.litedramnativeport0_cmd_last
+@22
+CrossbarDUT.litedramnativeport0_cmd_payload_addr[23:0]
+@28
+CrossbarDUT.litedramnativeport0_cmd_payload_we
+CrossbarDUT.litedramnativeport0_cmd_ready
+CrossbarDUT.litedramnativeport0_cmd_valid
+@22
+CrossbarDUT.litedramnativeport0_rdata_payload_data[63:0]
+@28
+CrossbarDUT.litedramnativeport0_rdata_valid
+@22
+CrossbarDUT.litedramnativeport0_wdata_payload_data[63:0]
+CrossbarDUT.litedramnativeport0_wdata_payload_we[7:0]
+@28
+CrossbarDUT.litedramnativeport0_wdata_ready
+@200
+-
+-
+@28
+CrossbarDUT.litedramnativeport1_cmd_first
+CrossbarDUT.litedramnativeport1_cmd_last
+@22
+CrossbarDUT.litedramnativeport1_cmd_payload_addr[23:0]
+@28
+CrossbarDUT.litedramnativeport1_cmd_payload_we
+CrossbarDUT.litedramnativeport1_cmd_ready
+CrossbarDUT.litedramnativeport1_cmd_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport1_rdata_payload_data[63:0]
+@29
+CrossbarDUT.litedramnativeport1_rdata_valid
+@200
+-
+@22
+CrossbarDUT.litedramnativeport1_wdata_payload_data[63:0]
+CrossbarDUT.litedramnativeport1_wdata_payload_we[7:0]
+@28
+CrossbarDUT.litedramnativeport1_wdata_ready
+@200
+-
+-
+@22
+CrossbarDUT.interface_bank0_addr[20:0]
+@28
+CrossbarDUT.interface_bank0_lock
+CrossbarDUT.interface_bank0_ready
+CrossbarDUT.interface_bank0_valid
+CrossbarDUT.interface_bank0_rdata_valid
+CrossbarDUT.interface_bank0_wdata_ready
+CrossbarDUT.interface_bank0_we
+@200
+-
+-
+@22
+CrossbarDUT.interface_bank1_addr[20:0]
+@28
+CrossbarDUT.interface_bank1_lock
+CrossbarDUT.interface_bank1_ready
+CrossbarDUT.interface_bank1_valid
+CrossbarDUT.interface_bank1_rdata_valid
+CrossbarDUT.interface_bank1_wdata_ready
+CrossbarDUT.interface_bank1_we
+@200
+-
+@28
+CrossbarDUT.sys_clk
+[pattern_trace] 1
+[pattern_trace] 0

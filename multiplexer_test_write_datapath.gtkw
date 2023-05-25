@@ -1,0 +1,68 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 02:57:51 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/multiplexer_test_write_datapath.vcd"
+[dumpfile_mtime] "Thu May 25 02:57:34 2023"
+[dumpfile_size] 11341
+[savefile] "/devel/riscv/litex-root/litedram/multiplexer_test_write_datapath.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-4.018232 43 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 655
+[signals_width] 402
+[sst_expanded] 1
+[sst_vpaned_height] 923
+@28
+choose_req_ce
+@22
+choose_req_cmd_payload_a[12:0]
+@28
+choose_req_cmd_payload_ba[2:0]
+choose_req_cmd_payload_cas
+choose_req_cmd_payload_is_cmd
+choose_req_cmd_payload_is_read
+choose_req_cmd_payload_is_write
+choose_req_cmd_payload_ras
+choose_req_cmd_payload_we
+choose_req_cmd_ready
+choose_req_cmd_valid
+@23
+choose_req_grant[2:0]
+@22
+choose_req_request[7:0]
+choose_req_valids[7:0]
+@28
+choose_req_want_activates
+choose_req_want_cmds
+choose_req_want_reads
+choose_req_want_writes
+@200
+-
+-
+@28
+choose_cmd_ce
+@22
+choose_cmd_cmd_payload_a[12:0]
+@28
+choose_cmd_cmd_payload_ba[2:0]
+choose_cmd_cmd_payload_cas
+choose_cmd_cmd_payload_is_cmd
+choose_cmd_cmd_payload_is_read
+choose_cmd_cmd_payload_is_write
+choose_cmd_cmd_payload_ras
+choose_cmd_cmd_payload_we
+choose_cmd_cmd_ready
+choose_cmd_cmd_valid
+choose_cmd_grant[2:0]
+@22
+choose_cmd_request[7:0]
+choose_cmd_valids[7:0]
+@28
+choose_cmd_want_activates
+choose_cmd_want_cmds
+choose_cmd_want_reads
+choose_cmd_want_writes
+[pattern_trace] 1
+[pattern_trace] 0

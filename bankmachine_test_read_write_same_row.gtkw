@@ -1,0 +1,98 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Thu May 25 02:35:58 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/bankmachine_test_read_write_same_row.vcd"
+[dumpfile_mtime] "Thu May 25 01:25:23 2023"
+[dumpfile_size] 8514
+[savefile] "/devel/riscv/litex-root/litedram/bankmachine_test_read_write_same_row.gtkw"
+[timestart] 0
+[size] 2550 2822
+[pos] -1 -1
+*-3.877370 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 482
+[signals_width] 462
+[sst_expanded] 1
+[sst_vpaned_height] 923
+@22
+BankMachineDUT.cmd_payload_a[12:0]
+@28
+BankMachineDUT.cmd_payload_ba[2:0]
+BankMachineDUT.cmd_payload_cas
+BankMachineDUT.cmd_payload_is_cmd
+BankMachineDUT.cmd_payload_is_read
+BankMachineDUT.cmd_payload_is_write
+BankMachineDUT.cmd_payload_ras
+BankMachineDUT.cmd_payload_we
+BankMachineDUT.cmd_ready
+BankMachineDUT.cmd_valid
+@200
+-
+-
+@28
+BankMachineDUT.wrport_adr[2:0]
+@22
+BankMachineDUT.wrport_dat_r[23:0]
+BankMachineDUT.wrport_dat_w[23:0]
+@28
+BankMachineDUT.wrport_we
+@200
+-
+@28
+BankMachineDUT.rdport_adr[2:0]
+@22
+BankMachineDUT.rdport_dat_r[23:0]
+@200
+-
+-
+@22
+BankMachineDUT.req_addr[20:0]
+@28
+BankMachineDUT.req_lock
+BankMachineDUT.req_rdata_valid
+BankMachineDUT.req_ready
+BankMachineDUT.req_valid
+BankMachineDUT.req_wdata_ready
+BankMachineDUT.req_we
+BankMachineDUT.pipe_valid_source_first
+BankMachineDUT.pipe_valid_source_last
+@22
+BankMachineDUT.pipe_valid_source_payload_addr[20:0]
+@28
+BankMachineDUT.pipe_valid_source_payload_we
+BankMachineDUT.pipe_valid_source_ready
+BankMachineDUT.pipe_valid_source_valid
+@200
+-
+-
+@28
+BankMachineDUT.pipe_valid_sink_first
+BankMachineDUT.pipe_valid_sink_last
+@22
+BankMachineDUT.pipe_valid_sink_payload_addr[20:0]
+@28
+BankMachineDUT.pipe_valid_sink_payload_we
+BankMachineDUT.pipe_valid_sink_ready
+BankMachineDUT.pipe_valid_sink_valid
+@200
+-
+@28
+BankMachineDUT.fifo_in_first
+BankMachineDUT.fifo_in_last
+@22
+BankMachineDUT.fifo_in_payload_addr[20:0]
+@28
+BankMachineDUT.fifo_in_payload_we
+@201
+-
+@28
+BankMachineDUT.fifo_out_first
+BankMachineDUT.fifo_out_last
+@22
+BankMachineDUT.fifo_out_payload_addr[20:0]
+@28
+BankMachineDUT.fifo_out_payload_we
+@22
+BankMachineDUT.level[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
