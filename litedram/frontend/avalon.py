@@ -4,7 +4,7 @@
 # Copyright (c) 2023 Hans Baier <hansfbaier@gmail.com>
 # SPDX-License-Identifier: BSD-2-Clause
 
-"""Wishbone frontend for LiteDRAM"""
+"""AvalonMM frontend for LiteDRAM"""
 
 from math import log2
 
@@ -15,7 +15,7 @@ from litedram.common import LiteDRAMNativePort
 from litedram.frontend.adapter import LiteDRAMNativePortConverter
 
 
-# LiteDRAMWishbone2Native --------------------------------------------------------------------------
+# LiteDRAMAvalonMM2Native --------------------------------------------------------------------------
 
 class LiteDRAMAvalonMM2Native(Module):
     def __init__(self, avalon, port, *, max_burst_length=16, base_address=0x00000000, burst_increment=1):
@@ -218,4 +218,3 @@ class LiteDRAMAvalonMM2Native(Module):
                 NextValue(burstcounter, burstcounter - 1)
             )
         )
-
