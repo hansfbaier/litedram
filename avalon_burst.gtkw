@@ -1,18 +1,18 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Fri May 26 00:09:48 2023
+[*] Fri May 26 02:47:19 2023
 [*]
 [dumpfile] "/devel/riscv/litex-root/litedram/avalon_test_avalon_burst.vcd"
-[dumpfile_mtime] "Fri May 26 00:08:39 2023"
-[dumpfile_size] 19039
+[dumpfile_mtime] "Fri May 26 02:43:22 2023"
+[dumpfile_size] 22359
 [savefile] "/devel/riscv/litex-root/litedram/avalon_burst.gtkw"
 [timestart] 0
 [size] 2550 2822
 [pos] -1 -1
-*-5.945796 159 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 60
+*-5.945796 285 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 296
 [signals_width] 342
-[sst_expanded] 0
+[sst_expanded] 1
 [sst_vpaned_height] 820
 @28
 sys_clk
@@ -47,13 +47,9 @@ state[2:0]
 @200
 -
 -Write FIFO
-@28
-sink_ready
-sink_valid
-source_ready
-source_valid
-@29
-source_last
+@22
+cmd_fifo_level[4:0]
+wdata_fifo_level[4:0]
 @200
 -
 -Native
