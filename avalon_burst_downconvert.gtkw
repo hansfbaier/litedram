@@ -1,17 +1,17 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Tue May 30 22:58:34 2023
+[*] Wed May 31 01:31:22 2023
 [*]
 [dumpfile] "/devel/riscv/litex-root/litedram/avalon_test_avalon_burst_downconvert.vcd"
-[dumpfile_mtime] "Tue May 30 22:55:59 2023"
-[dumpfile_size] 39592
+[dumpfile_mtime] "Wed May 31 01:29:55 2023"
+[dumpfile_size] 44349
 [savefile] "/devel/riscv/litex-root/litedram/avalon_burst_downconvert.gtkw"
-[timestart] 1174
+[timestart] 1111
 [size] 2550 2822
 [pos] -1 -1
-*-4.591195 1322 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 297
-[signals_width] 512
+*-6.262093 1216 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 296
+[signals_width] 378
 [sst_expanded] 1
 [sst_vpaned_height] 820
 @28
@@ -19,9 +19,8 @@ sys_clk
 @200
 -
 -Avalon
-@23
-avl_address[29:0]
 @22
+avl_address[29:0]
 avl_burstcount[7:0]
 @28
 avl_waitrequest
@@ -39,6 +38,8 @@ avl_readdatavalid
 -State
 @28
 dut_active_burst
+@23
+dut_burstcounter[8:0]
 @22
 fsm_state[2:0]
 @200

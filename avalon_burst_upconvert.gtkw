@@ -1,0 +1,106 @@
+[*]
+[*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
+[*] Wed May 31 04:09:18 2023
+[*]
+[dumpfile] "/devel/riscv/litex-root/litedram/avalon_test_avalon_burst_upconvert.vcd"
+[dumpfile_mtime] "Wed May 31 04:03:42 2023"
+[dumpfile_size] 138991
+[savefile] "/devel/riscv/litex-root/litedram/avalon_burst_upconvert.gtkw"
+[timestart] 396
+[size] 2550 2822
+[pos] -1 -1
+*-5.101404 530 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 60
+[signals_width] 640
+[sst_expanded] 0
+[sst_vpaned_height] 820
+@28
+sys_clk
+@200
+-
+-Avalon
+@22
+avl_address[29:0]
+avl_burstcount[7:0]
+@28
+avl_waitrequest
+avl_write
+@22
+avl_writedata[31:0]
+@28
+avl_read
+@22
+avl_readdata[31:0]
+@28
+avl_readdatavalid
+@200
+-
+-State
+@22
+fsm_state[2:0]
+burstcounter[8:0]
+@28
+start_transaction
+start_burst
+active_burst
+@22
+cmd_ready_counter[8:0]
+@28
+cmd_ready_seen
+@200
+-
+-Write FIFO
+@22
+cmd_fifo_level[4:0]
+wdata_fifo_level[4:0]
+@200
+-
+@201
+-Converter
+@22
+new_port_cmd_payload_addr[30:0]
+@28
+new_port_cmd_payload_we
+new_port_cmd_ready
+new_port_cmd_valid
+@200
+-
+@22
+new_port_wdata_payload_data[31:0]
+new_port_wdata_payload_we[3:0]
+@28
+new_port_wdata_ready
+new_port_wdata_valid
+@200
+-
+@22
+new_port_rdata_payload_data[31:0]
+@28
+new_port_rdata_ready
+new_port_rdata_valid
+@200
+-
+-Native
+@22
+cmd_payload_addr[29:0]
+@28
+cmd_payload_we
+cmd_ready
+cmd_valid
+@200
+-
+@22
+wdata_payload_data[63:0]
+wdata_payload_we[7:0]
+@28
+wdata_ready
+wdata_valid
+@200
+-
+@22
+rdata_payload_data[63:0]
+@28
+rdata_ready
+rdata_valid
+[pattern_trace] 1
+[pattern_trace] 0
