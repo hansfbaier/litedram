@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.4.0 (w)1999-2022 BSI
-[*] Wed May 31 04:09:18 2023
+[*] Wed May 31 04:31:14 2023
 [*]
 [dumpfile] "/devel/riscv/litex-root/litedram/avalon_test_avalon_burst_upconvert.vcd"
-[dumpfile_mtime] "Wed May 31 04:03:42 2023"
-[dumpfile_size] 138991
+[dumpfile_mtime] "Wed May 31 04:30:47 2023"
+[dumpfile_size] 67357
 [savefile] "/devel/riscv/litex-root/litedram/avalon_burst_upconvert.gtkw"
-[timestart] 396
+[timestart] 0
 [size] 2550 2822
 [pos] -1 -1
-*-5.101404 530 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-7.101404 515 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 60
 [signals_width] 640
 [sst_expanded] 0
@@ -55,8 +55,13 @@ cmd_fifo_level[4:0]
 wdata_fifo_level[4:0]
 @200
 -
-@201
 -Converter
+@24
+litedramnativeportconverter_state[1:0]
+@29
+litedramnativeportconverter_next_cmd
+@200
+-
 @22
 new_port_cmd_payload_addr[30:0]
 @28
